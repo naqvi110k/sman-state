@@ -26,7 +26,8 @@ export const OAuth = () => {
       toast.success("Successfully signed in")
       navigate("/");
     } catch (error) {
-      toast.error(error);
+      console.error('Google sign in error:', error);
+      toast.error(error.response?.data?.message || error.message || 'Failed to sign in with Google');
     }
   };
 
