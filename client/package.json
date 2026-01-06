@@ -8,11 +8,7 @@
     "build": "vite build",
     "lint": "eslint .",
     "preview": "vite preview",
-<<<<<<< HEAD
     "vercel-build": "vite build"
-=======
-    "vercel-build": "npm run build"
->>>>>>> 3237e85530b7215ddc2481df3160e04aa610b620
   },
   "dependencies": {
     "@cloudinary/react": "^1.13.1",

@@ -5,8 +5,6 @@ import userRouter from './routes/user.route.js';
 import authRouter from './routes/auth.route.js';
 import listingRouter from './routes/listing.route.js';
 import cookieParser from 'cookie-parser';
-import path from 'path';
-import { fileURLToPath } from 'url';
 dotenv.config();
 
 // Connect to MongoDB
@@ -36,23 +34,4 @@ app.use ((err, req, res, next) => {
     })
 })
 
-<<<<<<< HEAD
-=======
-// Serve static files from the frontend build (only in development)
-if (!process.env.VERCEL) {
-  const __filename = fileURLToPath(import.meta.url);
-  const __dirname = path.dirname(__filename);
-
-  // Serve static files from client/dist
-  const distPath = path.join(__dirname, '../client/dist');
-  app.use(express.static(distPath));
-
-  // Serve index.html for all non-API routes
-  app.get('*', (req, res) => {
-    res.sendFile(path.join(distPath, 'index.html'));
-  });
-}
-
-// For Vercel deployment
->>>>>>> 3237e85530b7215ddc2481df3160e04aa610b620
 export default app;
